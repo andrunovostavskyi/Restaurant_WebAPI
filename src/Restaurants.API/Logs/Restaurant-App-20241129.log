@@ -1,0 +1,754 @@
+2024-11-29 19:45:08.546 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:45:09.255 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:45:09.295 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:45:11.158 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 59.3458 ms
+2024-11-29 19:45:11.174 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.5870 ms
+2024-11-29 19:45:11.177 +02:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 7.7295 ms
+2024-11-29 19:45:11.177 +02:00 [INF] HTTP GET /swagger/index.css responded 304 in 8.0334 ms
+2024-11-29 19:45:11.177 +02:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 8.0440 ms
+2024-11-29 19:45:11.177 +02:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 8.0336 ms
+2024-11-29 19:45:11.455 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 83.2099 ms
+2024-11-29 19:46:20.386 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:46:20.837 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:46:20.872 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:46:21.474 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 52.7407 ms
+2024-11-29 19:46:21.485 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.9077 ms
+2024-11-29 19:46:21.760 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 91.1950 ms
+2024-11-29 19:46:48.902 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 19:46:49.144 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 19:46:49.174 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 19:46:49.183 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 19:46:49.212 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 19:46:49.227 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 457.9729 ms
+2024-11-29 19:47:03.652 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 401 in 11.1851 ms
+2024-11-29 19:47:11.469 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 9.0359 ms
+2024-11-29 19:47:31.907 +02:00 [INF] Update user: 30638f2e-2ef9-4a9d-9370-5b32208171af, with {"BirthDay":"2024-11-29T17:47:18.5020000Z","Nationality":"Ukrainian","$type":"UpdateUserDetailsCommand"}
+2024-11-29 19:47:31.970 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 19:47:32.053 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 19:47:32.065 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 214.2196 ms
+2024-11-29 19:47:37.126 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 0.4956 ms
+2024-11-29 19:50:29.555 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:50:29.996 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:50:30.032 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:50:35.645 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:50:36.474 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:50:36.523 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:50:37.755 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 62.3466 ms
+2024-11-29 19:50:37.771 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 7.7044 ms
+2024-11-29 19:50:37.967 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 111.0235 ms
+2024-11-29 19:50:52.700 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 401 in 24.7148 ms
+2024-11-29 19:51:25.401 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 19:51:25.628 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 19:51:25.665 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 19:51:25.674 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 19:51:25.699 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 19:51:25.713 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 462.3627 ms
+2024-11-29 19:52:03.543 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 19:52:03.614 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 19:52:03.619 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 19:52:03.623 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 19:52:03.629 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 19:52:03.632 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 139.2851 ms
+2024-11-29 19:52:18.863 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 5.5886 ms
+2024-11-29 19:53:26.937 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:53:27.441 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:53:27.476 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:53:28.645 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 91.3689 ms
+2024-11-29 19:53:28.795 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 103.4406 ms
+2024-11-29 19:53:28.966 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 85.1755 ms
+2024-11-29 19:54:03.552 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 19:54:03.734 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 19:54:03.760 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 19:54:03.768 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 19:54:03.786 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 19:54:03.800 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 373.2128 ms
+2024-11-29 19:54:33.107 +02:00 [INF] Update user: 30638f2e-2ef9-4a9d-9370-5b32208171af, with {"BirthDay":"2000-11-29T17:54:25.8810000Z","Nationality":"string","$type":"UpdateUserDetailsCommand"}
+2024-11-29 19:54:33.167 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 19:54:33.242 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 19:54:33.251 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 204.0514 ms
+2024-11-29 19:54:48.125 +02:00 [INF] Get all restaurants
+2024-11-29 19:54:48.174 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 19:54:48.243 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 183.7720 ms
+2024-11-29 19:54:58.144 +02:00 [WRN] Birthday is nill
+2024-11-29 19:54:58.147 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 8.4623 ms
+2024-11-29 19:57:52.624 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 19:57:53.179 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 19:57:53.230 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 19:57:53.982 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 57.3455 ms
+2024-11-29 19:57:54.007 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.8105 ms
+2024-11-29 19:57:54.187 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 99.0300 ms
+2024-11-29 19:58:22.083 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 19:58:22.294 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 19:58:22.319 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 19:58:22.328 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 19:58:22.349 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 19:58:22.364 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 423.0194 ms
+2024-11-29 20:07:45.458 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:07:46.078 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:07:46.126 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:07:47.865 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 65.3205 ms
+2024-11-29 20:07:47.886 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 10.6337 ms
+2024-11-29 20:07:48.087 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 117.6390 ms
+2024-11-29 20:08:34.441 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:08:34.653 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:08:34.685 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:08:34.702 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 410.6061 ms
+2024-11-29 20:10:02.091 +02:00 [INF] Get all restaurants
+2024-11-29 20:10:02.190 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:10:02.272 +02:00 [INF] Request [GET] at /api/Restaurant took 60 ms
+2024-11-29 20:10:02.275 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 60240.3078 ms
+2024-11-29 20:10:23.420 +02:00 [INF] Update user: 0c4f8545-c8a0-4ac5-97fd-0dfeacdff182, with {"BirthDay":"2024-11-29T18:10:12.0150000Z","Nationality":"Ukrainian","$type":"UpdateUserDetailsCommand"}
+2024-11-29 20:10:23.441 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 20:10:23.532 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 20:10:23.544 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 179.5528 ms
+2024-11-29 20:10:57.121 +02:00 [INF] Get all restaurants
+2024-11-29 20:10:57.134 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:10:57.141 +02:00 [INF] Request [GET] at /api/Restaurant took 29 ms
+2024-11-29 20:10:57.143 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 29062.8253 ms
+2024-11-29 20:11:41.855 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:11:41.925 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:11:41.930 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:11:41.941 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:11:41.963 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:11:41.966 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 122.1196 ms
+2024-11-29 20:13:01.851 +02:00 [INF] Get all restaurants
+2024-11-29 20:13:01.854 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:13:01.858 +02:00 [INF] Request [GET] at /api/Restaurant took 65 ms
+2024-11-29 20:13:01.860 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 65539.5524 ms
+2024-11-29 20:13:23.270 +02:00 [WRN] Birthday is nill
+2024-11-29 20:13:23.275 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 5.6720 ms
+2024-11-29 20:13:40.313 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:13:40.376 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:13:40.380 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:13:40.383 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 83.5631 ms
+2024-11-29 20:13:58.920 +02:00 [WRN] Birthday is nill
+2024-11-29 20:13:58.922 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 2.8768 ms
+2024-11-29 20:15:07.182 +02:00 [INF] Get all restaurants
+2024-11-29 20:15:07.192 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:15:07.199 +02:00 [INF] Request [GET] at /api/Restaurant took 62 ms
+2024-11-29 20:15:07.201 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 62056.1104 ms
+2024-11-29 20:16:17.592 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:16:18.143 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:16:18.193 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:16:19.297 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 66.2145 ms
+2024-11-29 20:16:19.322 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 10.9637 ms
+2024-11-29 20:16:19.545 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 120.2907 ms
+2024-11-29 20:16:38.471 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:16:38.667 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:16:38.692 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:16:38.702 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:16:38.719 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:16:38.734 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 400.8046 ms
+2024-11-29 20:18:25.043 +02:00 [INF] Update user: 30638f2e-2ef9-4a9d-9370-5b32208171af, with {"BirthDay":"2000-11-29T18:17:57.3390000Z","Nationality":"Portugal","$type":"UpdateUserDetailsCommand"}
+2024-11-29 20:18:25.066 +02:00 [INF] Get all restaurants
+2024-11-29 20:18:25.099 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 20:18:25.138 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:18:25.233 +02:00 [INF] Request [GET] at /api/Restaurant took 91 ms
+2024-11-29 20:18:25.236 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 91775.6145 ms
+2024-11-29 20:18:25.246 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 20:18:25.264 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 282.4974 ms
+2024-11-29 20:18:45.867 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:18:45.934 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:18:45.938 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:18:45.940 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 85.7984 ms
+2024-11-29 20:19:19.146 +02:00 [INF] Get all restaurants
+2024-11-29 20:19:19.152 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:19:19.156 +02:00 [INF] Request [GET] at /api/Restaurant took 17 ms
+2024-11-29 20:19:19.158 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 17063.8767 ms
+2024-11-29 20:19:33.394 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:19:33.461 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:19:33.465 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:19:33.471 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:19:33.474 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:19:33.477 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 96.9290 ms
+2024-11-29 20:20:05.559 +02:00 [INF] Get all restaurants
+2024-11-29 20:20:05.563 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-11-29 20:20:05.566 +02:00 [INF] Request [GET] at /api/Restaurant took 17 ms
+2024-11-29 20:20:05.568 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 17708.1890 ms
+2024-11-29 20:20:19.445 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:20:19.516 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:20:19.521 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:20:19.523 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 84.3264 ms
+2024-11-29 20:20:46.112 +02:00 [INF] Update user: 0c4f8545-c8a0-4ac5-97fd-0dfeacdff182, with {"BirthDay":"2000-11-29T18:17:57.3390000Z","Nationality":"Ukrainian","$type":"UpdateUserDetailsCommand"}
+2024-11-29 20:20:46.118 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 20:20:46.124 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 20:20:46.126 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 24.0908 ms
+2024-11-29 20:20:55.692 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:20:55.760 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:20:55.766 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:20:55.768 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 94.3866 ms
+2024-11-29 20:21:36.382 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:21:36.835 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:21:36.872 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:21:37.459 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 49.3633 ms
+2024-11-29 20:21:37.468 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.4530 ms
+2024-11-29 20:21:37.664 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 107.3233 ms
+2024-11-29 20:21:59.466 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:21:59.636 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:21:59.658 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:21:59.668 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:21:59.692 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:21:59.703 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 345.5653 ms
+2024-11-29 20:22:13.288 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 401 in 12.3519 ms
+2024-11-29 20:22:20.407 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 6.1442 ms
+2024-11-29 20:22:35.227 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:22:35.294 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:22:35.300 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:22:35.303 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 127.0063 ms
+2024-11-29 20:22:52.338 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 2.4757 ms
+2024-11-29 20:23:50.243 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:23:50.802 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:23:50.850 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:23:51.966 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 57.5833 ms
+2024-11-29 20:23:51.979 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.8517 ms
+2024-11-29 20:23:52.169 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 98.1312 ms
+2024-11-29 20:24:03.764 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 401 in 21.7985 ms
+2024-11-29 20:24:30.226 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:24:30.437 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:24:30.471 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:24:30.480 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:24:30.502 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:24:30.519 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 430.0947 ms
+2024-11-29 20:24:55.813 +02:00 [INF] Update user: 30638f2e-2ef9-4a9d-9370-5b32208171af, with {"BirthDay":"2000-11-29T18:24:37.9110000Z","Nationality":"Ukrainian","$type":"UpdateUserDetailsCommand"}
+2024-11-29 20:24:55.877 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2024-11-29 20:24:55.970 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p16='?', @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p17='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "BirthDay" = @p1, "ConcurrencyStamp" = @p2, "Email" = @p3, "EmailConfirmed" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "Nationality" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "SecurityStamp" = @p13, "TwoFactorEnabled" = @p14, "UserName" = @p15
+WHERE "Id" = @p16 AND "ConcurrencyStamp" = @p17;
+2024-11-29 20:24:55.982 +02:00 [INF] HTTP PATCH /api/identity/user responded 204 in 244.5308 ms
+2024-11-29 20:25:06.354 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 15.5304 ms
+2024-11-29 20:25:20.318 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:25:20.386 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:25:20.390 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:25:20.393 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 86.7577 ms
+2024-11-29 20:25:41.821 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 403 in 1.6527 ms
+2024-11-29 20:27:12.818 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:27:13.264 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:27:13.298 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:27:13.729 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 45.2231 ms
+2024-11-29 20:27:13.741 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.4482 ms
+2024-11-29 20:27:13.894 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 73.8810 ms
+2024-11-29 20:27:22.236 +02:00 [INF] HTTP GET /api/identity/claims responded 401 in 18.4134 ms
+2024-11-29 20:27:53.748 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:27:53.927 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:27:53.950 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:27:53.960 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:27:53.978 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:27:53.988 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 336.5109 ms
+2024-11-29 20:28:06.519 +02:00 [INF] HTTP GET /api/identity/claims responded 200 in 21.0764 ms
+2024-11-29 20:29:16.546 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:29:17.010 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:29:17.044 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:29:17.672 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 44.6056 ms
+2024-11-29 20:29:17.685 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.4199 ms
+2024-11-29 20:29:17.768 +02:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 5.7624 ms
+2024-11-29 20:29:17.838 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 87.0512 ms
+2024-11-29 20:29:39.791 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:29:39.964 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:29:39.985 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:29:39.994 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:29:40.011 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:29:40.022 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 335.6874 ms
+2024-11-29 20:35:52.805 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:35:53.345 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:35:53.391 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:35:54.275 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 56.9425 ms
+2024-11-29 20:35:54.288 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.3830 ms
+2024-11-29 20:35:54.476 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 98.3020 ms
+2024-11-29 20:36:16.846 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:36:17.053 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:36:17.082 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:36:17.096 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:36:17.118 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:36:17.135 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 434.7204 ms
+2024-11-29 20:38:27.824 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-29 20:38:28.364 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-11-29 20:38:28.409 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-11-29 20:38:29.127 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 56.6563 ms
+2024-11-29 20:38:29.148 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.7810 ms
+2024-11-29 20:38:29.342 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 99.3979 ms
+2024-11-29 20:38:54.496 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-29 20:38:54.706 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-11-29 20:38:54.733 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-11-29 20:38:54.744 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-29 20:38:54.774 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-11-29 20:38:54.793 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 435.5777 ms
+2024-11-29 20:39:06.428 +02:00 [INF] HTTP GET /api/identity/claims responded 200 in 32.4823 ms

@@ -1,0 +1,222 @@
+2025-01-10 20:30:59.160 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:30:59.915 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:30:59.957 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:31:01.366 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 59.4400 ms
+2025-01-10 20:31:01.386 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.3440 ms
+2025-01-10 20:31:01.621 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 107.7812 ms
+2025-01-10 20:31:31.157 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 189.0632 ms
+2025-01-10 20:31:38.275 +02:00 [INF] Get all restaurants
+2025-01-10 20:31:38.388 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-10 20:31:38.427 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-10 20:31:38.430 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-10 20:31:38.635 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-10 20:31:38.791 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 641.5059 ms
+2025-01-10 20:32:02.129 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:02.960 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:03.015 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:03.732 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 78.6299 ms
+2025-01-10 20:32:03.760 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 6.1197 ms
+2025-01-10 20:32:04.028 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 141.7142 ms
+2025-01-10 20:32:12.149 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 154.4492 ms
+2025-01-10 20:32:26.183 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:26.944 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:26.997 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:27.565 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 72.5557 ms
+2025-01-10 20:32:27.577 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.9163 ms
+2025-01-10 20:32:27.792 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 118.6811 ms
+2025-01-10 20:32:44.234 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:44.997 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:45.072 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:45.605 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 88.4659 ms
+2025-01-10 20:32:45.617 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.0507 ms
+2025-01-10 20:32:45.860 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 131.9873 ms
+2025-01-10 20:36:05.042 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:36:05.771 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:36:05.833 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:36:06.440 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 67.8351 ms
+2025-01-10 20:36:06.453 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.7311 ms
+2025-01-10 20:36:06.686 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 130.5955 ms
+2025-01-10 20:37:02.898 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 16
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:37:02.949 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 80.8092 ms
+2025-01-10 20:37:17.410 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:37:18.250 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:37:18.324 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:37:19.852 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 94.4743 ms
+2025-01-10 20:37:19.872 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 10.0138 ms
+2025-01-10 20:37:20.460 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 296.6910 ms
+2025-01-10 20:38:05.787 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 16
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:38:05.834 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 37091.0449 ms
+2025-01-10 20:38:59.347 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:39:00.121 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:39:00.183 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:39:00.861 +02:00 [WRN] User is null
+2025-01-10 20:39:00.866 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 22
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:39:00.900 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 82.5460 ms
+2025-01-10 20:39:00.904 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 60.7532 ms
+2025-01-10 20:39:00.918 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.8695 ms
+2025-01-10 20:39:01.177 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 117.6205 ms
+2025-01-10 20:39:11.676 +02:00 [WRN] User is null
+2025-01-10 20:39:11.680 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 22
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:39:11.690 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 23.2438 ms
+2025-01-10 20:39:21.235 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:39:22.032 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:39:22.104 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:39:23.877 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 91.3068 ms
+2025-01-10 20:39:23.902 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 6.2260 ms
+2025-01-10 20:39:24.251 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 202.8696 ms
+2025-01-10 20:39:32.326 +02:00 [WRN] User is null
+2025-01-10 20:39:44.933 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 22
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:39:44.981 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 12706.5065 ms
+2025-01-10 20:39:59.913 +02:00 [WRN] User is null
+2025-01-10 20:40:11.128 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 22
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:40:11.140 +02:00 [ERR] HTTP GET /api/Restaurant/1 responded 500 in 22758.0637 ms
+2025-01-10 20:41:25.212 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:41:26.244 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:41:26.321 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:41:27.724 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 85.9979 ms
+2025-01-10 20:41:27.744 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 8.5330 ms
+2025-01-10 20:41:28.040 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 162.7938 ms
+2025-01-10 20:43:04.419 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:43:05.102 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:43:05.161 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:43:05.871 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 60.9675 ms
+2025-01-10 20:43:05.882 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.4681 ms
+2025-01-10 20:43:06.131 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 116.6877 ms
+2025-01-10 20:43:13.837 +02:00 [WRN] User is null
+2025-01-10 20:43:13.843 +02:00 [INF] HTTP GET /api/Restaurant/1 responded 401 in 43.2645 ms

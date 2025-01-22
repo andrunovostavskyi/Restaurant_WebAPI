@@ -1,0 +1,93 @@
+2025-01-10 20:29:49.073 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:29:49.893 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:29:49.940 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:29:50.370 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:29:50.514 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 166.2665 ms
+2025-01-10 20:30:42.164 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:30:42.847 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:30:42.903 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:30:43.160 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:30:43.291 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 149.7944 ms
+2025-01-10 20:32:05.444 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:06.265 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:06.331 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:06.570 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:32:06.763 +02:00 [INF] Get all restaurants
+2025-01-10 20:32:06.840 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-10 20:32:06.868 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-10 20:32:06.870 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-10 20:32:07.024 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-10 20:32:07.177 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 629.2071 ms
+2025-01-10 20:32:27.348 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:28.071 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:28.121 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:28.367 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:32:28.522 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 173.4971 ms
+2025-01-10 20:32:48.283 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:32:49.050 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:32:49.110 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:32:49.356 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:32:49.499 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 160.9910 ms
+2025-01-10 20:36:07.800 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-10 20:36:08.531 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-10 20:36:08.587 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-10 20:36:08.825 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-10 20:36:08.855 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Authorize.Requirenents.MinimalNumberRestaurantsRequirementsHandler.HandleRequirementAsync(AuthorizationHandlerContext context, MinimalNumberRestaurantsRequirements requirement) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Authorize\Requirenents\MinimalNumberRestaurantsRequirementsHandler.cs:line 16
+   at Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(AuthorizationHandlerContext context)
+   at Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.AuthorizeAsync(ClaimsPrincipal user, Object resource, IEnumerable`1 requirements)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthorizeAsync(AuthorizationPolicy policy, AuthenticateResult authenticationResult, HttpContext context, Object resource)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-10 20:36:08.898 +02:00 [ERR] HTTP GET /api/Restaurant/1121 responded 500 in 89.7122 ms

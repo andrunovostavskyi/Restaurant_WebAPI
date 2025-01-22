@@ -1,0 +1,23 @@
+2025-01-11 01:25:09.473 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-11 01:25:09.503 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-11 01:25:09.543 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-11 01:25:09.570 +02:00 [INF] Get all restaurants
+2025-01-11 01:25:09.593 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 51.2126 ms
+2025-01-11 01:35:28.504 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-11 01:35:29.070 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-11 01:35:29.105 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-11 01:35:29.346 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-11 01:35:29.461 +02:00 [INF] Get restaurants with id = 1121
+2025-01-11 01:35:29.488 +02:00 [INF] HTTP GET /api/Restaurant/1121 responded 200 in 153.8435 ms

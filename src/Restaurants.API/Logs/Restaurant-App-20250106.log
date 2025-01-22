@@ -1,0 +1,1254 @@
+2025-01-06 15:20:53.966 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 15:20:54.606 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 15:20:54.648 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 15:20:56.644 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 64.4484 ms
+2025-01-06 15:20:56.658 +02:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 8.4276 ms
+2025-01-06 15:20:56.658 +02:00 [INF] HTTP GET /swagger/index.css responded 304 in 8.4448 ms
+2025-01-06 15:20:56.658 +02:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 8.4448 ms
+2025-01-06 15:20:56.670 +02:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 1.7204 ms
+2025-01-06 15:20:56.675 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.1193 ms
+2025-01-06 15:20:56.920 +02:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.2230 ms
+2025-01-06 15:20:57.044 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 132.1817 ms
+2025-01-06 15:21:28.467 +02:00 [INF] Get all restaurants
+2025-01-06 15:21:28.573 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 15:21:28.784 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2025-01-06 15:21:28.988 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 729.4675 ms
+2025-01-06 15:21:38.263 +02:00 [INF] Get all restaurants
+2025-01-06 15:21:38.335 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 15:21:38.341 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2025-01-06 15:21:38.352 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 112.2697 ms
+2025-01-06 15:21:54.315 +02:00 [INF] Get all restaurants
+2025-01-06 15:21:54.326 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 15:21:54.333 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2025-01-06 15:21:54.342 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 39.7857 ms
+2025-01-06 15:22:09.443 +02:00 [INF] Get all restaurants
+2025-01-06 15:22:09.512 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 15:22:09.537 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+ORDER BY r."Id"
+2025-01-06 15:22:09.543 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 101.2353 ms
+2025-01-06 15:22:17.953 +02:00 [INF] Get all restaurants
+2025-01-06 15:22:17.957 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 15:22:17.965 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+ORDER BY r."Id"
+2025-01-06 15:22:17.975 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 23.6804 ms
+2025-01-06 15:22:26.263 +02:00 [INF] Get all restaurants
+2025-01-06 15:22:26.268 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 15:22:26.294 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+ORDER BY r."Id"
+2025-01-06 15:22:26.303 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 41.8071 ms
+2025-01-06 15:22:33.723 +02:00 [INF] Get all restaurants
+2025-01-06 15:22:33.727 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 15:22:33.735 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+ORDER BY r."Id"
+2025-01-06 15:22:33.749 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 15:22:33.753 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 15:22:33.778 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 15:22:33.784 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 62.2794 ms
+2025-01-06 16:25:02.380 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:25:02.896 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:25:02.932 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:25:03.284 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 40.5506 ms
+2025-01-06 16:25:03.297 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.1341 ms
+2025-01-06 16:25:03.581 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 108.0308 ms
+2025-01-06 16:25:12.548 +02:00 [INF] Get all restaurants
+2025-01-06 16:25:12.602 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:25:12.620 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:25:12.623 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:25:12.721 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:25:12.746 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 296.0920 ms
+2025-01-06 16:25:40.212 +02:00 [INF] Get all restaurants
+2025-01-06 16:25:40.255 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:25:40.260 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:25:40.261 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:25:40.315 +02:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:25:40.334 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+2025-01-06 16:25:40.353 +02:00 [ERR] 2201X: OFFSET повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+2025-01-06 16:25:40.408 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 218.1162 ms
+2025-01-06 16:27:22.838 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:27:23.575 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:27:23.627 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:27:41.230 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:27:41.786 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:27:41.826 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:27:42.554 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 46.9927 ms
+2025-01-06 16:27:42.564 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.6535 ms
+2025-01-06 16:27:42.821 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 94.2477 ms
+2025-01-06 16:27:59.053 +02:00 [INF] Get all restaurants
+2025-01-06 16:27:59.115 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:27:59.136 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:27:59.139 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:27:59.253 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:27:59.281 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 359.6100 ms
+2025-01-06 16:28:03.238 +02:00 [INF] Get all restaurants
+2025-01-06 16:28:03.282 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:28:03.286 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:28:03.290 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 66.7723 ms
+2025-01-06 16:28:19.161 +02:00 [INF] Get all restaurants
+2025-01-06 16:28:19.164 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:28:19.169 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:28:19.246 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 103.6426 ms
+2025-01-06 16:28:27.605 +02:00 [INF] Get all restaurants
+2025-01-06 16:28:27.608 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:28:27.612 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:28:27.616 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 11.3479 ms
+2025-01-06 16:29:37.843 +02:00 [INF] Get all restaurants
+2025-01-06 16:29:37.858 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:29:37.863 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:29:37.864 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:29:37.877 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:29:37.880 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 38.6500 ms
+2025-01-06 16:29:45.739 +02:00 [INF] Get all restaurants
+2025-01-06 16:29:45.744 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:29:45.751 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:29:45.760 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 21.6690 ms
+2025-01-06 16:30:01.549 +02:00 [INF] Get all restaurants
+2025-01-06 16:30:01.551 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:30:01.555 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:30:01.560 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 11.6688 ms
+2025-01-06 16:30:12.193 +02:00 [INF] Get all restaurants
+2025-01-06 16:30:12.196 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:30:12.212 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:30:12.215 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 23.0599 ms
+2025-01-06 16:30:37.458 +02:00 [INF] Get all restaurants
+2025-01-06 16:30:37.463 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:30:37.468 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:30:37.473 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 16.7121 ms
+2025-01-06 16:30:48.464 +02:00 [INF] Get all restaurants
+2025-01-06 16:30:48.466 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:30:48.482 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:30:48.484 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 21.0584 ms
+2025-01-06 16:30:57.788 +02:00 [INF] Get all restaurants
+2025-01-06 16:30:57.791 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:30:57.795 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:30:57.798 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 11.5214 ms
+2025-01-06 16:31:10.952 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:10.954 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:10.959 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:31:10.963 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 11.7985 ms
+2025-01-06 16:31:16.734 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:16.736 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:16.741 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:31:16.746 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 13.1656 ms
+2025-01-06 16:31:27.262 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:27.264 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:27.292 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name" DESC, t."Id"
+2025-01-06 16:31:27.296 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 33.8246 ms
+2025-01-06 16:31:37.284 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:37.286 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:37.290 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name" DESC, t."Id"
+2025-01-06 16:31:37.296 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 12.4027 ms
+2025-01-06 16:31:44.466 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:44.469 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:44.473 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name" DESC, t."Id"
+2025-01-06 16:31:44.477 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 12.2740 ms
+2025-01-06 16:31:55.962 +02:00 [INF] Get all restaurants
+2025-01-06 16:31:55.965 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:31:55.969 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name" DESC, t."Id"
+2025-01-06 16:31:55.974 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 11.9353 ms
+2025-01-06 16:32:10.229 +02:00 [INF] Get all restaurants
+2025-01-06 16:32:10.232 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:32:10.244 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name", t."Id"
+2025-01-06 16:32:10.248 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 19.5768 ms
+2025-01-06 16:32:24.202 +02:00 [INF] Get all restaurants
+2025-01-06 16:32:24.204 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:32:24.220 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Category"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Category", t."Id"
+2025-01-06 16:32:24.224 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 22.8333 ms
+2025-01-06 16:32:37.511 +02:00 [INF] Get all restaurants
+2025-01-06 16:32:37.513 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:32:37.526 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Category" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Category" DESC, t."Id"
+2025-01-06 16:32:37.529 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 19.0443 ms
+2025-01-06 16:32:58.690 +02:00 [INF] Get all restaurants
+2025-01-06 16:32:58.756 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 16:32:58.771 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    ORDER BY r."Category" DESC
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Category" DESC, t."Id"
+2025-01-06 16:32:58.775 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 86.0963 ms
+2025-01-06 16:33:08.120 +02:00 [INF] Get all restaurants
+2025-01-06 16:33:08.125 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 16:33:08.161 +02:00 [ERR] Failed executing DbCommand (33ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    ORDER BY r."Category" DESC
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Category" DESC, t."Id"
+2025-01-06 16:33:08.183 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:33:08.199 +02:00 [ERR] 2201W: LIMIT повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:33:08.266 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 146.3870 ms
+2025-01-06 16:33:24.541 +02:00 [INF] Get all restaurants
+2025-01-06 16:33:24.545 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 16:33:24.550 +02:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    ORDER BY r."Category" DESC
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Category" DESC, t."Id"
+2025-01-06 16:33:24.558 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+2025-01-06 16:33:24.570 +02:00 [ERR] 2201X: OFFSET повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201X: OFFSET повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201X
+    MessageText: OFFSET повинен бути не негативним
+    File: nodeLimit.c
+    Line: 374
+    Routine: recompute_limits
+2025-01-06 16:33:24.587 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 46.0749 ms
+2025-01-06 16:33:40.745 +02:00 [INF] Get all restaurants
+2025-01-06 16:33:40.747 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 16:33:40.755 +02:00 [ERR] The given key 'City' was not present in the dictionary.
+System.Collections.Generic.KeyNotFoundException: The given key 'City' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 51
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-06 16:33:40.775 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 31.3960 ms
+2025-01-06 16:33:47.077 +02:00 [INF] Get all restaurants
+2025-01-06 16:33:47.079 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2025-01-06 16:33:47.082 +02:00 [ERR] The given key 'City' was not present in the dictionary.
+System.Collections.Generic.KeyNotFoundException: The given key 'City' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 51
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2025-01-06 16:33:47.095 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 19.1772 ms
+2025-01-06 16:36:08.457 +02:00 [INF] HTTP POST /register responded 404 in 0.3045 ms
+2025-01-06 16:36:54.751 +02:00 [INF] Get all restaurants
+2025-01-06 16:36:54.753 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:36:54.756 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:36:54.759 +02:00 [INF] HTTP GET /api/restaurant responded 200 in 7.8549 ms
+2025-01-06 16:37:25.016 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:37:25.606 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:37:25.651 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:37:27.321 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 60.6174 ms
+2025-01-06 16:37:27.350 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.2670 ms
+2025-01-06 16:37:27.705 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 130.7706 ms
+2025-01-06 16:37:38.550 +02:00 [INF] Get all restaurants
+2025-01-06 16:37:38.625 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:37:38.651 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:37:38.654 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:37:38.823 +02:00 [ERR] Failed executing DbCommand (34ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:37:38.849 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:37:39.162 +02:00 [ERR] 2201W: LIMIT повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:37:39.192 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 813.7630 ms
+2025-01-06 16:38:03.109 +02:00 [INF] Get all restaurants
+2025-01-06 16:38:03.622 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:38:03.650 +02:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:38:03.654 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:38:03.888 +02:00 [ERR] 2201W: LIMIT повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:38:03.907 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 7526.0150 ms
+2025-01-06 16:38:48.934 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:38:49.520 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:38:49.567 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:38:50.292 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 61.3392 ms
+2025-01-06 16:38:50.345 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 43.8557 ms
+2025-01-06 16:38:50.538 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 121.3936 ms
+2025-01-06 16:39:14.660 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-01-06 16:39:15.086 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2025-01-06 16:39:15.113 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2025-01-06 16:39:15.123 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-01-06 16:39:15.144 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2025-01-06 16:39:15.165 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 661.4477 ms
+2025-01-06 16:39:59.902 +02:00 [INF] Request [POST] at /api/Restaurant took 19 ms
+2025-01-06 16:40:02.084 +02:00 [INF] HTTP POST /api/Restaurant responded 400 in 22888.3742 ms
+2025-01-06 16:40:33.111 +02:00 [INF] Get all restaurants
+2025-01-06 16:40:59.676 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:40:59.690 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:40:59.693 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:40:59.766 +02:00 [ERR] Failed executing DbCommand (31ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:40:59.791 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Restaurants.Infrastructures.Persistance.RestaurantDbContext'.
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:41:00.071 +02:00 [ERR] 2201W: LIMIT повинен бути не негативним
+Npgsql.PostgresException (0x80004005): 2201W: LIMIT повинен бути не негативним
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber, String sortBy, SortDirectory sortDirectory) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 57
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+  Exception data:
+    Severity: ПОМИЛКА
+    SqlState: 2201W
+    MessageText: LIMIT повинен бути не негативним
+    File: nodeLimit.c
+    Line: 400
+    Routine: recompute_limits
+2025-01-06 16:41:00.094 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 33770.1263 ms
+2025-01-06 16:41:56.586 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:41:57.131 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:41:57.174 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:41:58.238 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 56.4542 ms
+2025-01-06 16:41:58.253 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 4.6381 ms
+2025-01-06 16:41:58.452 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 109.6206 ms
+2025-01-06 16:42:16.950 +02:00 [INF] Get all restaurants
+2025-01-06 16:50:04.043 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-06 16:50:04.482 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-06 16:50:04.518 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-06 16:50:05.192 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 42.4695 ms
+2025-01-06 16:50:05.202 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.7734 ms
+2025-01-06 16:50:05.389 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 93.4757 ms
+2025-01-06 16:50:15.572 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 82.5765 ms
+2025-01-06 16:50:32.990 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 8.1005 ms
+2025-01-06 16:50:39.301 +02:00 [INF] Get all restaurants
+2025-01-06 16:50:39.368 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:50:39.389 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:50:39.392 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-01-06 16:50:39.504 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-06 16:50:39.587 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 366.2941 ms
+2025-01-06 16:50:56.591 +02:00 [INF] Get all restaurants
+2025-01-06 16:50:56.634 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:50:56.658 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name", t."Id"
+2025-01-06 16:50:56.663 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 75.2491 ms
+2025-01-06 16:51:21.329 +02:00 [INF] Get all restaurants
+2025-01-06 16:51:21.332 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+2025-01-06 16:51:21.347 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    ORDER BY r."Name" DESC
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Name" DESC, t."Id"
+2025-01-06 16:51:21.368 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 40.0432 ms

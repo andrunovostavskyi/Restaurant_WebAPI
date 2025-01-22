@@ -1,0 +1,774 @@
+2024-12-12 19:00:24.034 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:00:24.675 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:00:24.717 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:00:26.401 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 53.5228 ms
+2024-12-12 19:00:26.418 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.5910 ms
+2024-12-12 19:00:26.424 +02:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 7.3681 ms
+2024-12-12 19:00:26.424 +02:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 8.3092 ms
+2024-12-12 19:00:26.424 +02:00 [INF] HTTP GET /swagger/index.css responded 304 in 8.3092 ms
+2024-12-12 19:00:26.424 +02:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 8.3092 ms
+2024-12-12 19:00:26.740 +02:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.1795 ms
+2024-12-12 19:00:26.799 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 103.2103 ms
+2024-12-12 19:00:34.609 +02:00 [INF] Get all restaurants
+2024-12-12 19:00:34.620 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser, Int32 pageSize, Int32 pageNumber) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 32
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:00:34.668 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 173.9555 ms
+2024-12-12 19:00:49.941 +02:00 [INF] Get all restaurants
+2024-12-12 19:00:50.012 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:00:50.014 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:00:50.116 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:00:50.143 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 216.2300 ms
+2024-12-12 19:01:49.132 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:01:49.698 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:01:49.732 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:01:50.133 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 38.9421 ms
+2024-12-12 19:01:50.144 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.4072 ms
+2024-12-12 19:01:50.383 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 77.8343 ms
+2024-12-12 19:01:59.436 +02:00 [INF] Get all restaurants
+2024-12-12 19:01:59.441 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 32
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:01:59.482 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 153.1664 ms
+2024-12-12 19:02:11.009 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:02:11.614 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:02:11.667 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:02:13.038 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 59.9671 ms
+2024-12-12 19:02:13.050 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.3053 ms
+2024-12-12 19:02:13.332 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 185.9908 ms
+2024-12-12 19:02:37.568 +02:00 [INF] Get all restaurants
+2024-12-12 19:14:41.571 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:14:42.132 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:14:42.171 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:14:43.461 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 52.6948 ms
+2024-12-12 19:14:43.474 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.6214 ms
+2024-12-12 19:14:43.684 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 116.9080 ms
+2024-12-12 19:14:51.375 +02:00 [INF] Get all restaurants
+2024-12-12 19:14:51.383 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Infrastructures.Repository.RestaurantRepository.GetAllFilterAsync(String filterPhaser) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.Infrastructures\Repository\RestaurantRepository.cs:line 32
+   at Restaurants.Application.Restaurants.Queries.GetAllRestaurant.GetAllRestaurantsQueryHandle.Handle(GetAllRestaurantQuery request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Queries\GetAllRestaurant\GetAllRestaurantsQueryHandle.cs:line 18
+   at Restaurants.API.Controllers.RestaurantController.GetAll(GetAllRestaurantQuery query) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 23
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:14:51.413 +02:00 [ERR] HTTP GET /api/Restaurant responded 500 in 145.0442 ms
+2024-12-12 19:15:03.819 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:15:04.353 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:15:04.401 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:15:05.516 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 77.7526 ms
+2024-12-12 19:15:05.534 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 5.8058 ms
+2024-12-12 19:15:05.772 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 152.4451 ms
+2024-12-12 19:15:24.798 +02:00 [INF] Get all restaurants
+2024-12-12 19:16:36.763 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:16:37.358 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:16:37.407 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:16:38.762 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 68.2068 ms
+2024-12-12 19:16:38.778 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.4726 ms
+2024-12-12 19:16:39.039 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 164.2486 ms
+2024-12-12 19:16:49.356 +02:00 [INF] Get all restaurants
+2024-12-12 19:16:49.416 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:16:49.418 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:16:49.576 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:16:57.251 +02:00 [INF] Request [GET] at /api/Restaurant took 10 ms
+2024-12-12 19:16:57.254 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 12128.7496 ms
+2024-12-12 19:17:08.048 +02:00 [INF] Get all restaurants
+2024-12-12 19:17:08.096 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:17:08.101 +02:00 [INF] Request [GET] at /api/Restaurant took 6 ms
+2024-12-12 19:17:08.103 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 6855.9351 ms
+2024-12-12 19:17:13.039 +02:00 [INF] Get all restaurants
+2024-12-12 19:17:13.043 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:17:17.432 +02:00 [INF] Request [GET] at /api/Restaurant took 5 ms
+2024-12-12 19:17:17.434 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 6731.0492 ms
+2024-12-12 19:17:32.564 +02:00 [INF] Get all restaurants
+2024-12-12 19:17:32.581 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:17:39.026 +02:00 [INF] Request [GET] at /api/Restaurant took 19 ms
+2024-12-12 19:17:39.028 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 19138.7234 ms
+2024-12-12 19:17:42.985 +02:00 [INF] Get all restaurants
+2024-12-12 19:17:52.816 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:18:08.792 +02:00 [INF] Request [GET] at /api/Restaurant took 26 ms
+2024-12-12 19:18:08.794 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 26977.4674 ms
+2024-12-12 19:18:09.817 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 0.5301 ms
+2024-12-12 19:18:09.835 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 0.8233 ms
+2024-12-12 19:18:09.968 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 25.3497 ms
+2024-12-12 19:18:39.955 +02:00 [INF] Get all restaurants
+2024-12-12 19:18:42.470 +02:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM "Restaurants" AS r
+LEFT JOIN "Dishes" AS d ON r."Id" = d."RestaurantId"
+ORDER BY r."Id"
+2024-12-12 19:18:53.748 +02:00 [INF] Request [GET] at /api/Restaurant took 16 ms
+2024-12-12 19:18:53.750 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 16521.6740 ms
+2024-12-12 19:19:26.066 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:19:26.574 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:19:26.613 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:19:27.432 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 54.8599 ms
+2024-12-12 19:19:27.443 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.7600 ms
+2024-12-12 19:19:27.677 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 100.5568 ms
+2024-12-12 19:19:37.058 +02:00 [INF] Get all restaurants
+2024-12-12 19:19:37.096 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:19:37.099 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:19:37.213 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:19:37.312 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 357.9935 ms
+2024-12-12 19:19:50.848 +02:00 [INF] Get all restaurants
+2024-12-12 19:19:50.891 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:19:50.897 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 56.3689 ms
+2024-12-12 19:20:17.093 +02:00 [INF] Get all restaurants
+2024-12-12 19:20:17.097 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:20:17.098 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:20:17.111 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:20:17.114 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 33.6254 ms
+2024-12-12 19:20:21.286 +02:00 [INF] Get all restaurants
+2024-12-12 19:20:21.289 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_0 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:20:21.294 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 8.3341 ms
+2024-12-12 19:20:27.098 +02:00 [INF] Get all restaurants
+2024-12-12 19:20:27.102 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:20:27.106 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 9.0154 ms
+2024-12-12 19:20:38.505 +02:00 [INF] Get all restaurants
+2024-12-12 19:20:38.511 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:20:38.516 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 10.8973 ms
+2024-12-12 19:21:09.776 +02:00 [INF] Get all restaurants
+2024-12-12 19:21:09.789 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:21:09.791 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:21:09.813 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:21:09.817 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 41.3172 ms
+2024-12-12 19:21:21.922 +02:00 [INF] Get all restaurants
+2024-12-12 19:21:21.924 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:21:21.925 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:21:21.936 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_1 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:21:21.939 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 18.2312 ms
+2024-12-12 19:36:34.150 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:36:34.763 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:36:34.805 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:36:35.500 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 76.5954 ms
+2024-12-12 19:36:35.514 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.5559 ms
+2024-12-12 19:36:35.769 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 150.2673 ms
+2024-12-12 19:36:45.444 +02:00 [INF] Get all restaurants
+2024-12-12 19:36:45.558 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2024-12-12 19:36:45.576 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:36:45.578 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:36:45.660 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:36:45.763 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 425.3738 ms
+2024-12-12 19:37:16.966 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:37:17.437 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:37:17.471 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:37:17.867 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 42.2523 ms
+2024-12-12 19:37:17.875 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.2678 ms
+2024-12-12 19:37:18.030 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 79.7235 ms
+2024-12-12 19:37:52.551 +02:00 [INF] HTTP POST /api/Restaurant responded 400 in 85.6153 ms
+2024-12-12 19:38:01.016 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Application.Restaurants.Commands.CreateRestaurant.CreateRestaurantHandle.Handle(CreateRestaurantCommand request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Commands\CreateRestaurant\CreateRestaurantHandle.cs:line 21
+   at Restaurants.API.Controllers.RestaurantController.Create(CreateRestaurantCommand command) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 58
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:38:01.055 +02:00 [ERR] HTTP POST /api/Restaurant responded 500 in 121.0807 ms
+2024-12-12 19:38:25.498 +02:00 [INF] HTTP POST /api/Restaurant responded 400 in 12.5001 ms
+2024-12-12 19:38:33.203 +02:00 [ERR] Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Restaurants.Application.Restaurants.Commands.CreateRestaurant.CreateRestaurantHandle.Handle(CreateRestaurantCommand request, CancellationToken cancellationToken) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurant.Application\Restaurants\Commands\CreateRestaurant\CreateRestaurantHandle.cs:line 21
+   at Restaurants.API.Controllers.RestaurantController.Create(CreateRestaurantCommand command) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Controllers\RestaurantController.cs:line 58
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:38:33.215 +02:00 [ERR] HTTP POST /api/Restaurant responded 500 in 13.6106 ms
+2024-12-12 19:39:00.270 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:39:01.270 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:39:01.324 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:39:02.399 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 71.7577 ms
+2024-12-12 19:39:02.426 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 17.4090 ms
+2024-12-12 19:39:02.681 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 114.1904 ms
+2024-12-12 19:40:56.587 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:40:57.015 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:40:57.052 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:40:57.640 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 40.7311 ms
+2024-12-12 19:40:57.651 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 1.8827 ms
+2024-12-12 19:40:57.827 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 93.8263 ms
+2024-12-12 19:41:14.595 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-12-12 19:41:14.611 +02:00 [INF] HTTP POST /api/identity/login responded 401 in 140.1021 ms
+2024-12-12 19:41:20.129 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-12-12 19:41:20.135 +02:00 [INF] HTTP POST /api/identity/login responded 401 in 60.5711 ms
+2024-12-12 19:41:24.141 +02:00 [ERR] Failed to read parameter "LoginRequest login" from the request body as JSON.
+Microsoft.AspNetCore.Http.BadHttpRequestException: Failed to read parameter "LoginRequest login" from the request body as JSON.
+ ---> System.Text.Json.JsonException: The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options. Path: $ | LineNumber: 3 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options. LineNumber: 3 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextToken(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextTokenOrRollback(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync[TValue](HttpRequest request, JsonTypeInfo`1 jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.HttpRequestJsonExtensions.ReadFromJsonAsync[TValue](HttpRequest request, JsonTypeInfo`1 jsonTypeInfo, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__GeneratedRouteBuilderExtensionsCore.TryResolveBodyAsync[T](HttpContext httpContext, <GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__LogOrThrowExceptionHelper logOrThrowExceptionHelper, Boolean allowEmpty, String parameterTypeName, String parameterName, JsonTypeInfo`1 jsonTypeInfo, Boolean isInferred)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__LogOrThrowExceptionHelper.InvalidJsonRequestBody(String parameterTypeName, String parameterName, Exception exception)
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__GeneratedRouteBuilderExtensionsCore.TryResolveBodyAsync[T](HttpContext httpContext, <GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__LogOrThrowExceptionHelper logOrThrowExceptionHelper, Boolean allowEmpty, String parameterTypeName, String parameterName, JsonTypeInfo`1 jsonTypeInfo, Boolean isInferred)
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F69328E0708B4B584C5AACA22FE2C51A1CF192D6622828F613FC57C583CA77B63__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass4_0.<<MapPost1>g__RequestHandler|4>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Restaurants.API.Middlewares.RequestTimeHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\RequestTimeHandlingMiddle.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddle.InvokeAsync(HttpContext context, RequestDelegate next) in D:\C#\.net\NeverGiveUp\Restaurant\Restaurants.API\Middlewares\ErrorHandlingMiddle.cs:line 11
+2024-12-12 19:41:24.177 +02:00 [ERR] HTTP POST /api/identity/login responded 500 in 43.9741 ms
+2024-12-12 19:41:33.962 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."BirthDay", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."Nationality", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-12-12 19:41:34.209 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2024-12-12 19:41:34.236 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2024-12-12 19:41:34.245 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-12-12 19:41:34.264 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."ClaimType", a."ClaimValue"
+FROM "AspNetRoleClaims" AS a
+WHERE a."RoleId" = @__role_Id_0
+2024-12-12 19:41:34.296 +02:00 [INF] HTTP POST /api/identity/login responded 200 in 351.9524 ms
+2024-12-12 19:42:07.065 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:07.202 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:07.236 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 289.3330 ms
+2024-12-12 19:42:09.386 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:09.398 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:09.404 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 25.6113 ms
+2024-12-12 19:42:10.140 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:10.151 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:10.154 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 21.5243 ms
+2024-12-12 19:42:10.649 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:10.659 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:10.662 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.1756 ms
+2024-12-12 19:42:10.777 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:10.786 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:10.791 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.8369 ms
+2024-12-12 19:42:10.924 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:10.935 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:10.939 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.7930 ms
+2024-12-12 19:42:11.056 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.066 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.069 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.7657 ms
+2024-12-12 19:42:11.184 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.194 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.199 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 16.1469 ms
+2024-12-12 19:42:11.314 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.325 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.329 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.9905 ms
+2024-12-12 19:42:11.445 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.456 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.460 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.4951 ms
+2024-12-12 19:42:11.557 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.569 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.574 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 18.6384 ms
+2024-12-12 19:42:11.696 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.705 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.708 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 12.8359 ms
+2024-12-12 19:42:11.828 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.838 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:11.844 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.8253 ms
+2024-12-12 19:42:11.989 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:11.998 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.001 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.3000 ms
+2024-12-12 19:42:12.101 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.111 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.115 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 14.5036 ms
+2024-12-12 19:42:12.235 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.245 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.250 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 16.5068 ms
+2024-12-12 19:42:12.376 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.386 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.389 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 14.6194 ms
+2024-12-12 19:42:12.495 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.505 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.508 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.9384 ms
+2024-12-12 19:42:12.634 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.660 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.665 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 32.5143 ms
+2024-12-12 19:42:12.764 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.774 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.779 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.1879 ms
+2024-12-12 19:42:12.908 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:12.918 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:12.921 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.1089 ms
+2024-12-12 19:42:13.027 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.036 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.039 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.0554 ms
+2024-12-12 19:42:13.146 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.156 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.160 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 14.6272 ms
+2024-12-12 19:42:13.277 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.287 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.291 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 14.8001 ms
+2024-12-12 19:42:13.415 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.424 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.430 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 16.3366 ms
+2024-12-12 19:42:13.545 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.556 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.560 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.3838 ms
+2024-12-12 19:42:13.686 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.697 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.700 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.4976 ms
+2024-12-12 19:42:13.828 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.837 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.840 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.4616 ms
+2024-12-12 19:42:13.952 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:13.964 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:13.967 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 15.9976 ms
+2024-12-12 19:42:14.082 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:14.091 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:14.095 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 14.3340 ms
+2024-12-12 19:42:14.209 +02:00 [INF] admin@gmail.com with 30638f2e-2ef9-4a9d-9370-5b32208171af creating a new {"Name":"Choven","Description":"string","Category":"Ukraine","HasDelivery":true,"ContactEmail":"string@gmail.com","ContactNumber":"1213131231","City":"string","Street":"string","PostalCode":"333-22","$type":"CreateRestaurantCommand"}
+2024-12-12 19:42:14.218 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Category", "ContactEmail", "ContactNumber", "Description", "HasDelivery", "Name", "OwnerId", "Adress_City", "Adress_PostalCode", "Adress_Street")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2024-12-12 19:42:14.221 +02:00 [INF] HTTP POST /api/Restaurant responded 201 in 13.9118 ms
+2024-12-12 19:42:29.783 +02:00 [INF] Get all restaurants
+2024-12-12 19:42:29.827 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2024-12-12 19:42:29.838 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:42:29.843 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:42:29.891 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_2 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:42:29.908 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 139.6451 ms
+2024-12-12 19:43:40.789 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:43:41.340 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:43:41.386 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:43:42.653 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 75.6424 ms
+2024-12-12 19:43:42.673 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 12.5395 ms
+2024-12-12 19:43:42.868 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 108.2717 ms
+2024-12-12 19:43:56.263 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-12-12 19:43:56.879 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2024-12-12 19:43:56.924 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2024-12-12 19:43:57.838 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 58.7650 ms
+2024-12-12 19:43:57.875 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 3.6579 ms
+2024-12-12 19:43:58.069 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 112.5045 ms
+2024-12-12 19:44:22.101 +02:00 [INF] Get all restaurants
+2024-12-12 19:44:22.239 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__filterPhaseLower_0_contains='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Restaurants" AS r
+WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+2024-12-12 19:44:22.262 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:44:22.264 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-12 19:44:22.344 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__filterPhaseLower_0_contains='?', @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE lower(r."Name") LIKE @__filterPhaseLower_0_contains OR lower(r."Description") LIKE @__filterPhaseLower_0_contains
+    LIMIT @__p_1 OFFSET @__p_1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2024-12-12 19:44:29.952 +02:00 [INF] Request [GET] at /api/Restaurant took 17 ms
+2024-12-12 19:44:29.955 +02:00 [INF] HTTP GET /api/Restaurant responded 200 in 17491.7125 ms

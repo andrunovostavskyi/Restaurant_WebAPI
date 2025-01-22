@@ -1,0 +1,25 @@
+2025-01-22 12:55:06.386 +02:00 [WRN] The entity type 'Adress' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-01-22 12:55:07.255 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-22 12:55:07.310 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-22 12:55:09.341 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 86.3104 ms
+2025-01-22 12:55:09.383 +02:00 [INF] HTTP GET /swagger/index.js responded 200 in 2.5837 ms
+2025-01-22 12:55:09.703 +02:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 4.4533 ms
+2025-01-22 12:55:09.826 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 160.1631 ms
+2025-01-22 12:55:17.307 +02:00 [INF] Get dishes for restaurnt with id = 1
+2025-01-22 12:55:17.585 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Category", t."ContactEmail", t."ContactNumber", t."Description", t."HasDelivery", t."Name", t."OwnerId", t."Adress_City", t."Adress_PostalCode", t."Adress_Street", d."Id", d."Description", d."KiloCalories", d."Name", d."Price", d."RestaurantId"
+FROM (
+    SELECT r."Id", r."Category", r."ContactEmail", r."ContactNumber", r."Description", r."HasDelivery", r."Name", r."OwnerId", r."Adress_City", r."Adress_PostalCode", r."Adress_Street"
+    FROM "Restaurants" AS r
+    WHERE r."Id" = @__id_0
+    LIMIT 1
+) AS t
+LEFT JOIN "Dishes" AS d ON t."Id" = d."RestaurantId"
+ORDER BY t."Id"
+2025-01-22 12:55:17.765 +02:00 [INF] HTTP GET /api/restaurant/1/dishes responded 200 in 662.2529 ms

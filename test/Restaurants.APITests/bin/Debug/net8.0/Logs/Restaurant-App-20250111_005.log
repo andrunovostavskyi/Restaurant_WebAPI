@@ -1,0 +1,10 @@
+2025-01-11 01:35:29.775 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Restaurants" AS r)
+2025-01-11 01:35:29.780 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUserRoles" AS a)
+2025-01-11 01:35:29.804 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-01-11 01:35:29.863 +02:00 [INF] HTTP GET /api/Restaurant responded 400 in 59.5811 ms

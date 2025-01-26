@@ -92,7 +92,7 @@ Automated tests are included for:
 
 ## License
 
-This project is not licensed. However, you are free to suggest improvements or learn from the code.
+This is a learning project and does not include a license. Contributions are welcome to improve the codebase.
 
 ----------
 
